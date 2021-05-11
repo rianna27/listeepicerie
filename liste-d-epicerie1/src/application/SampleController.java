@@ -1,3 +1,10 @@
+/*
+ * Auteur: Rianna Smuk
+ * Date: 10 Mai 2021
+ * Description: Code qui permet d'afficher  votre liste d'épicerie. 
+ */
+
+
 package application;
 
 import java.io.File;
@@ -31,8 +38,6 @@ public class SampleController implements Initializable{
     @FXML
     private TextField txtPrix;
 
-    @FXML
-    private TextField txtFinal;
     
     @FXML
     private Button btnEffacer;
@@ -70,14 +75,9 @@ public class SampleController implements Initializable{
     @FXML
     private TextField txtNom;
     
-    @FXML
-    private Button btnTotal;
+   
     
-    private Double total1=0.0;
-    
-    private Double totalfinal=0.0;
-    
-    
+ 
     
     @FXML
    	private TableView<Liste1> ListeTable;
@@ -90,7 +90,7 @@ public class SampleController implements Initializable{
 
   	public ObservableList<Liste1> listeData=FXCollections.observableArrayList();
 
-  	//Créer une méthode pour accéder à la liste des étudiants
+  	//Créer une méthode pour accéder à la liste des épiceries
 
   	public  ObservableList<Liste1> getlisteData()
   	{
@@ -113,7 +113,7 @@ public class SampleController implements Initializable{
 		btnRecommencer.setDisable(true);
 		showliste(null);
 		
-		//Mettre à jour l'affichage d'un epicerie sélectionné
+		//Mettre à jour l'affichage d'une epicerie sélectionnée
 				ListeTable.getSelectionModel().selectedItemProperty().addListener((
 						observable, oldValue, newValue)-> showliste(newValue));
     }
@@ -163,26 +163,15 @@ public class SampleController implements Initializable{
   		Double prix= Double.parseDouble(txtPrix.getText());
   		Double tot= quantite * prix;
   		tmp.setTotal(tot);
-  		total1= total1 + tot;
   		listeData.add(tmp);
   		clearFields();
+      
     }
     }
-  	//Total
-  	@FXML
-  	void total()
-  	{   
-  
-  		 ObservableList<columnTotale> totalfin=FXCollections.observableArraycolumnTotal();
-
-  	  	//Créer une méthode pour accéder à la liste des étudiants
-
-  	  	public  ObservableList<Liste1> getlisteData1()
-  	  	{
-  	  		return listeData1;
-  	  	}
+  	
+  	
   		
-  	}
+  
   	
   	
   	//Effacer le contenu des champs
@@ -197,6 +186,9 @@ public class SampleController implements Initializable{
 		btnModifier.setDisable(true);
 		btnEffacer.setDisable(true);
 		btnRecommencer.setDisable(true);
+		
+		
+		
 	}
 	
 	
@@ -214,7 +206,8 @@ public class SampleController implements Initializable{
 				btnModifier.setDisable(false);
 				btnEffacer.setDisable(false);
 				btnRecommencer.setDisable(false);
-
+			
+			
 			}
 			else
 			{
@@ -229,7 +222,7 @@ public class SampleController implements Initializable{
 		// vérifier si un champ n'est pas vide
 			if(noEmptyInput())
 			{
-		
+		   
 			Liste1 liste=ListeTable.getSelectionModel().getSelectedItem();
 			liste.setNom(txtNom.getText());
 			liste.setQuantite(Double.parseDouble(txtQuantite.getText()));
@@ -239,14 +232,15 @@ public class SampleController implements Initializable{
 	  		Double prix= Double.parseDouble(txtPrix.getText());
 	  		Double tot= quantite * prix;
 	  		liste.setTotal(tot);
-	  		total1= total1 + tot;
-			ListeTable.refresh();
+	  		ListeTable.refresh();
+	  	
+			
 			
 			
 		 }
 		}
 		
-		//Effacer un epicerie
+		//Effacer une épicerie
 		
 		@FXML
 		public void deleteListe()
@@ -260,6 +254,7 @@ public class SampleController implements Initializable{
 				Optional<ButtonType> result= alert.showAndWait();
 				if(result.get()==ButtonType.OK)
 			    ListeTable.getItems().remove(selectedIndex);
+				
 			}
 		}
 		
@@ -423,7 +418,8 @@ public class SampleController implements Initializable{
 					loadEpicerieDataFromFile(file);
 				}
 			}
-			//Sauvegarder le fichier correspondant à l'étudiant actif. S'il n'y a pas de fichier, le menu sauvegarder sous va s'affichier
+			
+			//Sauvegarder le fichier correspondant à l'épicerie actif. S'il n'y a pas de fichier, le menu sauvegarder sous va s'affichier
 			
 			@FXML
 			private void handleSave() {
@@ -436,6 +432,7 @@ public class SampleController implements Initializable{
 					handleSaveAs();
 				}
 			}
+			
 			//Ouvrir le FileChooser pour trouver le chemin
 			
 			@FXML

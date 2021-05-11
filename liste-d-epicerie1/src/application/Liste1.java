@@ -7,27 +7,29 @@ public class Liste1
 	private Double quantite;
 	private Double prix;
 	private Double total;
-	
-	
+
+
+
 	//constructeur vide
-		public Liste1()
-		{
-			this(null);
-			
-		}
-		
-		//Constructeur avec 1 paramètre
-		public Liste1(String nom)
-		{
-			
-			this.nom=nom;
-			this.departement="";
-			this.quantite=0.0;
-			this.prix=0.0;
-		} 
-		
-		//Getters et Setters
-		
+	public Liste1()
+	{
+		this(null);
+
+	}
+
+	//Constructeur avec 1 paramètre
+	public Liste1(String nom)
+	{
+
+		this.nom=nom;
+		this.departement="";
+		this.quantite=0.0;
+		this.prix=0.0;
+
+	} 
+
+	//Getters et Setters
+
 
 	public String getDepartement() {
 		return departement;
@@ -59,5 +61,5 @@ public class Liste1
 	public void setTotal(Double total) {
 		this.total = total;
 	}
-	
+
 }
