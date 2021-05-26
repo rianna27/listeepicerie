@@ -8,6 +8,7 @@
 package application;
 
 import java.io.File;
+
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -75,9 +76,20 @@ public class SampleController implements Initializable{
     @FXML
     private TextField txtNom;
     
-   
+    private Main main;
     
- 
+   public void setMain(Main main)
+   {
+	   this.main=main;
+   }
+    
+
+   //pour ouvrir la fenetre secondaire 
+   
+   public void openNewWindow()
+   {
+	   main.secondWindow();
+   }
     
     @FXML
    	private TableView<Liste1> ListeTable;
@@ -455,10 +467,12 @@ public class SampleController implements Initializable{
 					
 				}
 				
-			}
+			  
+			  
 			
-		
 	 }
+			
+}
 
   	
   		

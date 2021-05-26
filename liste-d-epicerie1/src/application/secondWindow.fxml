@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="406.0" prefWidth="621.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.secondWindowController">
+   <children>
+      <Text fill="RED" layoutX="25.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Cette application vous permet de créer une liste d'épicerie. Elle affiche le nom de l'article que vous achetez, le département auquel appartient l'article, la quantité de chaque article, le prix pour chaque article et le prix total pour chaque article l’article. " wrappingWidth="644.9990234375">
+         <font>
+            <Font size="16.0" />
+         </font></Text>
+      <Text layoutX="25.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--&gt; Remplissez les TextFields et le ComboBox. " />
+      <Text layoutX="25.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--&gt; Lorsque tous les TextFields et le ComboBox sont remplis, cliquez sur le bouton &quot;Afficher&quot; pour afficher les données sur le tableau." />
+      <Text layoutX="26.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--&gt; Si vous voulez modifier des données dans le tableau, cliquez sur les données que vous voulez modifier, puis cliquez sur le bouton &quot;Modifier&quot;" wrappingWidth="754.177734375" />
+      <Text layoutX="26.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--&gt; Si vous voulez effacer des données dans le tableau, cliquez sur les données que vous voulez effacer, puis cliquez sur le bouton &quot;Effacer&quot;" wrappingWidth="754.177734375" />
+      <Text layoutX="26.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--&gt; Si vous voulez effacer tous les données dans les TextFields et le ComboBox,  cliquez sur le bouton &quot;Recommencer&quot;" wrappingWidth="754.177734375" />
+      <Text layoutX="26.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--&gt; Si vous voulez sauvegarder tous les données dans le tableau,  cliquez sur &quot;File&quot; puis sur &quot;Sauvegarder&quot;" wrappingWidth="754.177734375" />
+      <Text layoutX="26.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--&gt; Si vous voulez faire une nouvelle tableau,  cliquez sur &quot;File&quot; puis sur &quot;Nouveau&quot;" wrappingWidth="754.177734375" />
+      <Button fx:id="about" layoutX="324.0" layoutY="372.0" mnemonicParsing="false" onAction="#about1" text="Retourner" />
+      <Text layoutX="26.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--&gt; Si vous voulez faire une ouvrir un document ,  cliquez sur &quot;File&quot; puis sur &quot;Ouvrir&quot;" wrappingWidth="754.177734375" />
+   </children>
+</AnchorPane>
